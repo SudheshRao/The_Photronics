@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.navbar-brand {
+   position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+   
+   
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.navbar-brand img { width:auto; height:autopx; max-width:250px; max-height:100px;  
+   margin:auto;
+
+}
+.navbar-brand:hover,
+.navbar-brand:focus {
+   filter:invert(100%);
+}
+
+
+
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+.imgt {
+    width: 40%;
+    
+}
+
+@media(max-width:480px){
+.form {
+  position: relative;
+  background:;
+  max-width: 400px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}}
+@media(max-width:768px){
+.form {
+  position: relative;
+
+  background:;
+  max-width: 400px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}}
+@media(min-width:768px){
+.form {
+  position: relative;
+
+  background: ;
+  max-width: 500px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: Transparent;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #4caf50;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+ color:  #4caf50;
+     background:  rgba(76, 175, 80, .9);
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #800000;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+body{
+  background: url("../../../resources/images/god_guitar-1385312.jpg") no-repeat center center fixed;
+  background-size:cover;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+
+
