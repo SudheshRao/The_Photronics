@@ -1,9 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
 body {background:rgba(240,240,240,.6);}
-.container {text-align:center; position:absolute; display:inline-block; float:none;}
+
+
 .imgcontainer {
     text-align: center;
-    margin: 24px 0 12px 0;
+    margin: 0px 0 12px 0;
 }
 
 
@@ -24,8 +26,8 @@ body {background:rgba(240,240,240,.6);}
 
   background: #FFFFFF;
   max-width: 500px;
-  margin: 0 auto 100px;
-  padding: 45px;
+  margin: 60px auto 0px;
+  padding: 15px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }}
@@ -35,8 +37,8 @@ body {background:rgba(240,240,240,.6);}
 
   background: #FFFFFF;
   max-width: 600px;
-  margin: 0 auto 100px;
-  padding: 45px;
+  margin: 60px auto 0px;
+  padding: 15px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }}

@@ -16,18 +16,15 @@
 
 </head>
 <body>
-<nav class="navbar navbar-fixed-top nav-color">
-			
-		<div class="container-fluid">
-
-		
-<!-- navigation bar header -->					
-		<div class="navbar-header" >
+<!-- navigation bar -->
+	<nav class="navbar navbar-fixed-top nav-color">		
+		<div class="container">
 					
-			<a class="navbar-brand" href="/the_photronics/">The_Photronics</a>
-				
-		</div>	
-	</div>
+			<ul  style="text-align:center !important;"class="nav">
+				<li><a id="dropbtn" href="/the_photronics">The_Photronics</a></li>
+			</ul>
+			
+		</div>
 	</nav>
 
 <!-- form code -->
@@ -41,7 +38,7 @@
 				</div>
 				<div class="row">
 				<div class="col-sm-4 "><label class="control-label pull-left" for="username">Username</label></div>
-				<div class="col-sm-8 "><form:input path="username" id="username" class="form-control" placeholder="username"/></div>
+				<div class="col-sm-8 "><form:input path="username" id="username" class="form-control" placeholder="your name"/></div>
 				<form:errors path="username" cssClass="error"/>
 				</div>
 				
@@ -53,19 +50,19 @@
 				
 				<div class="row">
 				<div class="col-sm-4 "><label class="control-label pull-left" for="password">Password</label></div>
-				<div class="col-sm-8 "><form:input path="password" type="password" id="password" class="form-control" placeholder="password"/></div>
+				<div class="col-sm-8 "><form:input path="password" type="password" id="password" class="form-control" placeholder="keep it secret"/></div>
 				<form:errors path="password" cssClass="error"/>
 				</div>
 				
 				<div class="row">
 				<div class="col-sm-4 "><label class="control-label pull-left" for="confirmpassword">Confirm Password</label></div>
-				<div class="col-sm-8 "><form:input path="confirmpassword" type="password" id="confirmpassword" class="form-control" placeholder="confirm password"/></div>
+				<div class="col-sm-8 "><form:input path="confirmpassword" type="password" id="confirmpassword" class="form-control" placeholder='"ditto"'/></div>
 				<form:errors path="confirmpassword" type="password" cssClass="error"/>
 				</div>
 				
 				<div class="row">
 				<div class="col-sm-4 "><label class="control-label pull-left" for="address">Address</label></div>
-				<div class="col-sm-8 "><form:input path="address" id="address" class="form-control" placeholder="address" /></div>
+				<div class="col-sm-8 "><form:input path="address" id="address" class="form-control" placeholder="where do you live?" /></div>
 				<form:errors path="address" cssClass="error"/>
 				</div>
 				

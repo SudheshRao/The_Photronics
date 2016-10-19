@@ -80,11 +80,19 @@ public class ProductController {
 	 
 	//view product code
 	 @RequestMapping(value="/viewproduct")
-	 public String viewproduct(Model model){
-		 
-		List<Product> product = productService.getProductList();
+	 public String viewproduct(Model model,HttpServletRequest request){
+		String inst=request.getParameter("param");
+		List<Product> product = productService.getProductList(inst);
 		model.addAttribute("viewpro", product);
 		return "viewproduct";
+		}
+	 
+	 @RequestMapping(value="/userviewproduct")
+	 public String userviewproduct(Model model,HttpServletRequest request){
+		String inst=request.getParameter("param");
+		List<Product> product = productService.getProductList(inst);
+		model.addAttribute("viewpro", product);
+		return "userviewproduct";
 		}
 	 
 	 //edit product form code
@@ -141,6 +149,12 @@ public class ProductController {
 	        Product product = productService.getProductById(id);
 	        productService.deleteProduct(product);
 	        return "redirect:/viewproduct";
+	    }
+	 @RequestMapping("/infoproduct/{id}")
+	    public String info(@PathVariable int id,Model model) {
+		 Product prod= productService.getProductById(id);
+		 model.addAttribute("info", prod);
+	        return "infoproduct";
 	    }
 
 }

@@ -10,32 +10,33 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>"/> 
-		<link href="<c:url value="/resources/theme/css/carousel.css" />" rel="stylesheet"/>
+		<link href="<c:url value="/resources/theme/css/index.css" />" rel="stylesheet"/>
 					
 </head>
 
-<body style="height:2000px;">
+<body>
 
-	<div class="divb jumbotron container-fluid" style="margin-top:00px;height:550px;">
+	<div class="divb jumbotron container-fluid" style="margin-top:00px;height:550px;width:100%">
 		
 		<div class="container" style="margin-top:20px;">
-			<font size="6px">The_Photronics</font>
-			<div class="nav navbar navbar-right"><font size="6px"><i style="color:black;">Best online</i> <b style="color:red;">Music Store</b></font></div>
+			<font size="6px"><b style="border:2px solid white;">The_Photronics;</b></font>
+			<div class="nav navbar navbar-right"><font size="6px"><i style="color:black;">Best online</i> <b style="color:rgba(230,0,0,0.9);">Music Store</b></font></div>
 		</div>
 		
 		<div class="container" style="margin-top:20px;">
-			<h1 style="color:yellow;">Customize your instrument</h1>
-			<p style="color:black;">Sign up into Photronics and send the customized details of the instruments to us.</p>
-			<div class="btn btn-success"><a href="signup" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></div>
+			<h1 style="color:white;">Customize your instrument</h1>
+			<font class="p" size="5px" style="color:black;">Sign up into The_Photronics and send the customized details of the instruments to us.<br/></font>
+			<div class="btn btn-default"><a href="intro" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></div>
+			<div class="btn btn-info"><a href="userviewproduct?param=guitar" ><span class="glyphicon glyphicon-user"></span> userviewproduct</a></div>
 		</div>
 	
 	</div>	
 
 <!-- carousel starts -->
 	
-	<div class="container-fluid">
+	<div class="diva">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-
+<div class="">
 	<!-- Indicators -->
 	
 		<ol class="carousel-indicators">
@@ -47,7 +48,7 @@
 	<!-- indicators ends -->
 	<!-- Wrapper for slides -->
 	
-		<div class="carousel-inner" role="listbox">
+		<div class="carousel-inner" role="listbox" style="background-size:cover;">
 			
 			<div class="item active" id="slide1">
 				<img class="img-responsive" src="<c:url value="/resources/images/bob.jpg"/>" alt="guitar"/>				
@@ -77,12 +78,12 @@
 			<span class="icon-next" aria-hidden="true"></span>
 			<span class="sr-only">Next</span>
 		</a>
-
+</div>
 		</div><!-- carousel ends -->
 	</div><!-- container-fluid ends -->
-
+ 
 <!-- feature section starts -->
-
+<div class="container">
 	<div class="row" id="features">
 		<div class="container">
 			
@@ -106,10 +107,24 @@
 				<p>Direct from the factory</p>
 				<a href="" class="btn btn-info btn-block">Shop Now</a></div>
 			</div>
-		
+		</div>
 		</div><!-- container ends -->
 	</div><!-- feature section ends -->
-
+	<div class="divb jumbotron container-fluid" style="margin-top:00px;height:200px;width:100%">
+		
+		<div class="container" style="margin-top:20px;">
+			<font size="6px">The_Photronics</font>
+			<div class="nav navbar navbar-right"><font size="6px"><i style="color:black;">Best online</i> <b style="color:red;">Music Store</b></font></div>
+		</div>
+	</div>	
+	<div class="diva jumbotron container-fluid" style="margin-top:00px;height:200px;width:100%">
+		
+		<div class="container" style="margin-top:20px;">
+			<font size="6px">The_Photronics</font>
+			<div class="nav navbar navbar-right"><font size="6px"><i style="color:black;">Best online</i> <b style="color:red;">Music Store</b></font></div>
+		</div>
+	</div>	
+<div style="height:1000px;"></div>
 
 
 

@@ -1,37 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-.navbar-brand {
-   position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    text-align: center;
-   
-   
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-.navbar-brand img { width:auto; height:autopx; max-width:250px; max-height:100px;  
-   margin:auto;
-
-}
-.navbar-brand:hover,
-.navbar-brand:focus {
-   filter:invert(100%);
-}
-
-
-
 
 .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
-}
-
-.imgt {
-    width: 40%;
-    
 }
 
 @media(max-width:480px){

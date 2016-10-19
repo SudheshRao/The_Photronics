@@ -1,6 +1,6 @@
 .navbar-nav > li > a {padding-top:5px !important; padding-bottom:9px !important;}
 .navbar {min-height:32px !important;}
-
+div .nav > li > a {padding-top:5px !important; padding-bottom:9px !important;}
 
 .navbar-brand:hover {filter:invert(100%);}
 .navbar-brand { -webkit-border-radius: 3px;
@@ -20,7 +20,6 @@
 .nav-color {
 	color:  #fff;
 	background:  rgba(0,0,0, 0.6);}
-
 #dropbtn {
     background-color: rgba(0,0,0, 0);
     color: white;

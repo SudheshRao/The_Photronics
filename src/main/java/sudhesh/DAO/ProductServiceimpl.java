@@ -27,8 +27,8 @@ public class ProductServiceimpl {
 	
 		//view product service implementation
 		@Transactional
-		public List<Product> getProductList() {
-			return productdao.getProductList();
+		public List<Product> getProductList(String inst) {
+			return productdao.getProductList(inst);
 		}
 		
 		//get product service implementation

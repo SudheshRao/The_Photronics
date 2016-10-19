@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import sudhesh.model.CustomerLogin;
 
@@ -22,18 +22,28 @@ public class HomeController {
         return "index";
     }
     
-    //login page mapping
-    @RequestMapping("/login")
-    public String login() {
-        return "login";
+    @RequestMapping("/intro")
+    public String intro() {
+        return "intro";
     }
     
-    //login execution code
-    @RequestMapping(value="/login" , method=RequestMethod.GET)
-    public String login(Model model) {
-    	model.addAttribute("loginForm", new CustomerLogin());
+    //login page mapping
+    @RequestMapping("/login")
+    public String login(@RequestParam(value="error", required = false) String error, Model model) {
+        if (error!=null) {
+            model.addAttribute("error", "Invalid username and password");
+        }
+
         return "login";
     }
+
+    
+    //login execution code
+  /* @RequestMapping(value="/login" , method=RequestMethod.GET)
+    public String login(Model model) {
+    	model.addAttribute("loginForm", new CustomerLogin());
+        return "intro";
+    }*/
 
 
 

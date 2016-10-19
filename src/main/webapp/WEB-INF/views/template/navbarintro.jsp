@@ -1,51 +1,40 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<!DOCTYPE html>
- <html>
-
+<!DOCTYPE html >
+<html>
 <head>
-    
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="<c:url value="/resources/theme/css/navbarstyle.css"/>" rel="stylesheet"/>
-	<link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>"/>
-		
-	<title>The_Photronics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>"/> 
+		<link href="<c:url value="/resources/theme/css/intro.css" />" rel="stylesheet"/>
+<title>The_Photronics</title>
+
+<style>
+nav { background-color:rgba(255,255,255,1);border-radius:0px;}
+div {position:relative;}
+.logo {max-width:100px; max-height:150px;}
+</style>
 
 </head>
-
-<body >
+<body style="height:1500px">
 	
-<!-- navigation bar code starts -->
-	
-	<nav class="navbar navbar-fixed-top nav-color">
+	<div>
+		<nav class="" ><div style="height:100px;"><img class="logo" src="<c:url value="/resources/images/logo.gif"/>"/></div></nav>
+		
+		<nav>
+			<div class="container-fluid">
 			
-		<div class="container-fluid">
-			
-<!-- collapse code -->
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
 						
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 					
-		</button>
-
-<!-- navigation bar header -->					
-		
-		<div class="navbar-header ">
-					
-			<!--<a class="navbar-brand " href="/the_photronics/"><img class="logo" src="<c:url value="/resources/images/logo.gif"/>"/></a>-->
-				
-		</div>
-  
-<!-- items in navigation bar -->    
-		
+			</button>
 		<div class="navbar-collapse collapse navbar-responsive-collapse ">
 			
 			<ul class="nav navbar-nav">
 				
 	<!-- drop-down for products -->
-				<li><a id="dropbtn" href="/the_photronics">The_Photronics</a></li>
+				<li><a id="dropbtn" href="/the_photronics">Home</a></li>
 				<li class="dropdown">
 					<a id="dropbtn" class="dropdown-toggle" data-toggle="dropdown" href="#">Instruments <b class="caret"></b></a>
 						<ul id ="dropdown-content" class="dropdown-menu">
@@ -95,20 +84,20 @@
 			<c:if test="${pageContext.request.userPrincipal.name != null}">
                             <li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
                             <li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li></c:if>
-                            <c:if test="${pageContext.request.userPrincipal.name == 'admin'}">
-			<li><a id="dropbtn" href="addproduct"><span class="glyphicon glyphicon-log-in"></span>  Add Product</a></li></c:if>
-			<c:if test="${pageContext.request.userPrincipal.name == null}">
-				<li><a id="dropbtn" href="signup" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				<li><a id="dropbtn" href="login"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li></c:if>
+			<li class="dropdown">
+				<a id="dropbtn" class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<b class="caret"></b></a>
+					<ul id ="dropdown-content" class="dropdown-menu">
+						<li class="dropdown-submenu"><a id="dropbtn" tabindex="-1" href="viewproduct?param=guitar">Guitars and bass</a></li>
+						<li class="dropdown-submenu"><a id="dropbtn" href="viewproduct?param=drums">Drums</a></li>
+						<li class="dropdown-submenu"><a id="dropbtn" href="viewproduct?param=piano">Piano</a></li>							
+					</ul>
+			</li>
+
 			</ul>
-			
-		</div><!-- end of items in navigation bar -->
- 
-		</div><!-- end of container -->
-
-	</nav><!-- end of navigation bar -->
-
-
+		</div>
+ </div>
+</nav>
+</div>
 <script src="<c:url value="/resources/bootstrap/js/bootstrap.min.js"/>"></script>
 </body>
 </html>

@@ -1,10 +1,36 @@
 package sudhesh.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="customerlogin")
 public class CustomerLogin {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int cid;	
 	private String username;
 	private String password;
+	public int id;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	//getters and setters method
+	public int getCid() {
+		return cid;
+	}
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+	
 	public String getUsername() {
 		return username;
 	}

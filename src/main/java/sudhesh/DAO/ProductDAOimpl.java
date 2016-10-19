@@ -36,9 +36,11 @@ public class ProductDAOimpl {
 	    }
 
 	    //view product DAO implementation
-	    public List<Product> getProductList() {
+	    public List<Product> getProductList(String inst) {
+	    	
 	    	Session session = sessionFactory.getCurrentSession();
-	    	Query query = session.createQuery("from Product");
+	    	Query query = session.createQuery("from Product where instrument = :inst");
+	    	query.setParameter("inst", inst);
 	    	List<Product> product = query.list();
 	    	session.flush();
 	    	

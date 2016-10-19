@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -15,15 +16,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class CustomerSignup {
 	
 	@Id
-    @GenericGenerator(
-        name = "customer", 
-        strategy = "enhanced-table", 
-        parameters = {
-            @org.hibernate.annotations.Parameter(
-                name = "customer", 
-                value = "hibernate_sequences"
-            )
-    })
+    @GenericGenerator(name = "customer", strategy = "enhanced-table", 
+    				  parameters = {@org.hibernate.annotations.Parameter(name = "customer", value = "hibernate_sequences")})
     @GeneratedValue(generator = "customer", strategy=GenerationType.TABLE)
 	public int id;
 	@NotEmpty
@@ -36,9 +30,16 @@ public class CustomerSignup {
 	public String confirmpassword;
 	@NotEmpty
 	public String address;
-
+	
 	
 	//getters and setters method
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getUsername() {
 		return username;
 	}
