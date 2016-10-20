@@ -43,6 +43,12 @@
 				</div>
 				
 				<div class="row">
+				<div class="col-sm-4 "><label class="control-label pull-left" for="phno">phone number</label></div>
+				<div class="col-sm-8 "><form:input path="phno" id="phno" class="form-control" placeholder="phone number"  /></div>
+				<form:errors path="email" cssClass="error"/>
+				</div>
+				
+				<div class="row">
 				<div class="col-sm-4 "><label class="control-label pull-left" for="email">Email id</label></div>
 				<div class="col-sm-8 "><form:input path="email" id="email" class="form-control" placeholder="email@domain.com"  /></div>
 				<form:errors path="email" cssClass="error"/>
@@ -62,11 +68,11 @@
 				
 				<div class="row">
 				<div class="col-sm-4 "><label class="control-label pull-left" for="address">Address</label></div>
-				<div class="col-sm-8 "><form:input path="address" id="address" class="form-control" placeholder="where do you live?" /></div>
+				<div class="col-sm-8 "><form:textarea path="address" id="address" class="form-control" placeholder="where do you live?" /></div>
 				<form:errors path="address" cssClass="error"/>
 				</div>
 				
-				<button type="submit" value="Signup">Signup</button>
+				<button style="margin-top:10px;" type="submit" value="Signup">Signup</button>
 				
 			</form:form>
 		</div>

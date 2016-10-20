@@ -55,13 +55,13 @@
         <security:intercept-url pattern="/viewproduct*/**" access="permitAll" />
         <security:form-login
             login-page="/login"
-            default-target-url="/intro"
+            default-target-url="/"
             authentication-failure-url="/login?error"
             login-processing-url="/j_spring_security_check"
             username-parameter="j_username"
             password-parameter="j_password" />
         <security:logout
-            logout-success-url="/login" logout-url="/j_spring_security_logout"/>
+            logout-success-url="/" logout-url="/j_spring_security_logout"/>
     </security:http>
 
     <security:authentication-manager>

@@ -5,6 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/*
+ * Authorities model
+ * created by sudhesh rao p 
+ */
+
 @Entity
 public class Authorities {
 	
@@ -15,7 +20,7 @@ public class Authorities {
 	public String authority;
 	public int id;
 	
-	
+	//getters and setters
 	public int getId() {
 		return id;
 	}

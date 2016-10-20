@@ -25,36 +25,48 @@
 </head>
 <body>
 
-<div class="container-wrapper">
-    <div class="login-container">
-        <div id="login-box">
+<!-- navigation bar -->
+	<nav class="navbar navbar-fixed-top nav-color">		
+		<div class="container">
+					
+			<ul  style="text-align:center !important;"class="nav">
+				<li><a id="dropbtn" href="/the_photronics">The_Photronics</a></li>
+			</ul>
+			
+		</div>
+	</nav>
 
-            <h2>Login with Username and Password</h2>
-
-            <c:if test="${not empty msg}">
+<div class="form-horizontal">
+		<div class="form form-group-md">
+			 <c:if test="${not empty msg}">
                 <div class="msg">${msg}</div>
             </c:if>
-
-            <form name="loginForm" action="<c:url value="/j_spring_security_check" />" method="post">
+				
+				<div class="imgcontainer">
+					<img style="width:150px;height:150px;" class="img-responsive center-block img-circle"src="<c:url value="/resources/images/login-image.jpg"/>" alt="login-image">
+				</div>
+				
+				<form name="loginForm" action="<c:url value="/j_spring_security_check" />" method="post">
                 <c:if test="${not empty error}">
                     <div class="error" style="color: #ff0000;">${error}</div>
                 </c:if>
-                <div class="form-group">
-                    <label for="username">User: </label>
-                    <input type="text" id="username" name="j_username" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="j_password" class="form-control" />
-                </div>
-
-                <input type="submit" value="Submit" class="btn btn-default">
+                <div class="row">
+				<div class="col-sm-4 "><label class="control-label pull-left" for="username">Username</label></div>
+				<div class="col-sm-8 "><input type="text" id="username" name="j_username" class="form-control" placeholder="your name"/></div>
+				
+				</div>
+				
+				<div class="row">
+				<div class="col-sm-4 "><label class="control-label pull-left" for="password">Password</label></div>
+				<div class="col-sm-8 "><input type="password" id="password" name="j_password" class="form-control" placeholder="keep it secret"/></div>
+				</div>
+				<input type="submit" value="log in" class="btn btn-default">
 
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
             </form>
+				
+				</div></div>
 
-        </div>
-    </div></div>
 <script src="<c:url value="/resources/bootstrap/js/jquery-3.1.0.min.js"/>"></script>
 <script src="<c:url value="/resources/bootstrap/js/bootstrap.min.js"/>"></script>
 </body>

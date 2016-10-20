@@ -4,12 +4,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+/*
+ * Customer login model
+ * created by sudhesh rao p 
+ */
 
 @Entity
 @Table(name="customerlogin")
 public class CustomerLogin {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int cid;	
@@ -17,13 +22,13 @@ public class CustomerLogin {
 	private String password;
 	public int id;
 	
+	//getters and setters
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	//getters and setters method
 	public int getCid() {
 		return cid;
 	}

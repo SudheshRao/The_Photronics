@@ -6,10 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+
+/*
+ * Customer Signup model
+ * created by sudhesh rao p 
+ */
 
 @Entity
 @Table(name="customer")
@@ -30,9 +36,16 @@ public class CustomerSignup {
 	public String confirmpassword;
 	@NotEmpty
 	public String address;
+	@NotNull
+	private long phno;
 	
-	
-	//getters and setters method
+	//getters and setters
+	public long getPhno() {
+		return phno;
+	}
+	public void setPhno(long phno) {
+		this.phno = phno;
+	}
 	public int getId() {
 		return id;
 	}

@@ -22,19 +22,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import sudhesh.DAO.ProductServiceimpl;
+import sudhesh.Service.ProductService;
+
 import sudhesh.model.Product;
 
+/*
+ * Product controller
+ * created by sudhesh rao p 
+ */
 
 @Controller
 public class ProductController {
 	private Path path;
 	
 	@Autowired
-	ProductServiceimpl productService;
+	ProductService productService;
 
 	@Qualifier(value="productService")
-	public void setProductservice(ProductServiceimpl productservice) {
+	public void setProductservice(ProductService productservice) {
 		this.productService = productservice;
 	}
 	
@@ -81,14 +86,6 @@ public class ProductController {
 	//view product code
 	 @RequestMapping(value="/viewproduct")
 	 public String viewproduct(Model model,HttpServletRequest request){
-		String inst=request.getParameter("param");
-		List<Product> product = productService.getProductList(inst);
-		model.addAttribute("viewpro", product);
-		return "viewproduct";
-		}
-	 
-	 @RequestMapping(value="/userviewproduct")
-	 public String userviewproduct(Model model,HttpServletRequest request){
 		String inst=request.getParameter("param");
 		List<Product> product = productService.getProductList(inst);
 		model.addAttribute("viewpro", product);
@@ -150,6 +147,8 @@ public class ProductController {
 	        productService.deleteProduct(product);
 	        return "redirect:/viewproduct";
 	    }
+	 
+	 // product info code
 	 @RequestMapping("/infoproduct/{id}")
 	    public String info(@PathVariable int id,Model model) {
 		 Product prod= productService.getProductById(id);

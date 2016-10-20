@@ -9,6 +9,11 @@ import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
 
+/*
+ * Product model
+ * created by sudhesh rao p 
+ */
+
 @Entity
 @Table (name="product")
 public class Product {
@@ -25,7 +30,7 @@ public class Product {
 	@Transient
 	private MultipartFile productpicture;
 	
-	//getters and setters method
+	//getters and setters 
 	public int getStock() {
 		return stock;
 	}

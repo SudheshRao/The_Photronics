@@ -11,18 +11,24 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import sudhesh.DAO.CustomerSignupServiceimpl;
+
+import sudhesh.Service.CustomerSignupService;
 import sudhesh.model.CustomerSignup;
+
+/*
+ * Signup controller
+ * created by sudhesh rao p 
+ */
 
 @Controller
 public class SignupController {
 
 
 	@Autowired 
-	CustomerSignupServiceimpl customerService;
+	CustomerSignupService customerService;
 	
 	@Qualifier(value="customerService")
-	public void setCustomerService(CustomerSignupServiceimpl cs) {
+	public void setCustomerService(CustomerSignupService cs) {
 		this.customerService = cs;
 	}
 	
