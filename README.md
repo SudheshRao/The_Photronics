@@ -11,6 +11,7 @@ Hibernate 4.0.1.Final
 #DB
 H2 version-1.4.190
 
-#other Wwb technologies
+#other Web technologies
 HTML5
 CSS3
+Boostrap 3
