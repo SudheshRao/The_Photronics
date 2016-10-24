@@ -1,10 +1,12 @@
 package sudhesh.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -38,8 +40,36 @@ public class CustomerSignup {
 	public String address;
 	@NotNull
 	private long phno;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="cid")
+	CustomerLogin user;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="cartid")
+	Cart cart;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="aid")
+	Address adrs;
+	
 	
 	//getters and setters
+	public Address getAdrs() {
+		return adrs;
+	}
+	public void setAdrs(Address adrs) {
+		this.adrs = adrs;
+	}
+	public CustomerLogin getUser() {
+		return user;
+	}
+	public void setUser(CustomerLogin user) {
+		this.user = user;
+	}
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 	public long getPhno() {
 		return phno;
 	}

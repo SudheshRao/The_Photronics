@@ -47,7 +47,7 @@ public class SignupController {
 	    		return "signup";}
 	    	else { 
 	    		this.customerService.addCustomer(customersignup);
-	    		   return "index";	
+	    		   return "redirect:/";	
 	    	}
 	     
 	    }

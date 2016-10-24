@@ -9,7 +9,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import sudhesh.DAO.CustomerSignupDAO;
+import sudhesh.model.Address;
 import sudhesh.model.Authorities;
+import sudhesh.model.Cart;
 import sudhesh.model.CustomerLogin;
 import sudhesh.model.CustomerSignup;
 
@@ -40,9 +42,10 @@ public class CustomerSignupDAOimpl implements CustomerSignupDAO {
         
         //persisting customers name and password to customer login table
         CustomerLogin cl=new CustomerLogin();
+        p.setUser(cl);
+        cl.setCs(p);
         cl.setUsername(p.getUsername());
         cl.setPassword(p.getPassword());
-        cl.setId(p.getId());
         session.persist(cl);
         
         // entering authority to the customer in authorities table
@@ -51,6 +54,19 @@ public class CustomerSignupDAOimpl implements CustomerSignupDAO {
         a.setAuthority("ROLE_USER");
         a.setId(p.getId());
         session.saveOrUpdate(a);
+        
+        //entering cart id to the customer
+        Cart cart = new Cart();
+		p.setCart(cart);
+		cart.setCustomer(p); 
+		session.saveOrUpdate(cart);
+		
+		//entering address into adress table
+		Address ad=new Address();
+		p.setAdrs(ad);
+		ad.setCs(p);
+		ad.setAddress(p.getAddress());
+		session.saveOrUpdate(ad);
 
         session.flush();
         

@@ -61,7 +61,7 @@
             username-parameter="j_username"
             password-parameter="j_password" />
         <security:logout
-            logout-success-url="/" logout-url="/j_spring_security_logout"/>
+            logout-success-url="/login?logout" logout-url="/j_spring_security_logout"/>
     </security:http>
 
     <security:authentication-manager>
