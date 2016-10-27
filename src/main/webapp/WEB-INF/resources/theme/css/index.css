@@ -3,13 +3,33 @@
 #slide1 { }
 #slide1:hover {filter:invert(100%);}
 .img-responsive {width:100%;}
+.cd{display:block;
+    position: relative;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1); }
+		.cd:hover{
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.2);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.2);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.2);
+    transition: all 200ms ease-in;
+    transform: scale(1.2);}		
 
 .divb { font-family: 'Kaushan Script', cursive; 
   position: relative;
-  z-index: 1;background-color:rgba(0,0,0,0.4) !important;
+  z-index: 1;background-color:rgba(0,0,0,0.7) !important;
 }
 
-.divb::before {
+.divb::before {filter:blur(2px);
   content: "";
   position: absolute;
   top: 0; 
@@ -47,7 +67,7 @@ div font, div font i {font-size:25px;}
 div h1{font-size:20px;} 
 .p{font-size:18px;}}
 
-#features {text-align:center;margin-top:15px;}
+#features {text-align:center;margin-top:25px;margin-bottom:25px;}
 #features img {margin: 5px 0px 10px;}
 
 #myCarousel .carousel-indicators li,
@@ -87,4 +107,4 @@ div h1{font-size:20px;}
 			height:auto;
 			margin:auto:			
 			}}
-			
+	

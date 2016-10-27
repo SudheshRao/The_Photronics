@@ -1,15 +1,17 @@
 package sudhesh.model;
 
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
-
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -24,21 +26,29 @@ public class Cart {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	public int cartid;
-	public int grandtotal;
+	public double grandtotal;
+	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Cartitem> cartItems;
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "id")
 	@JsonIgnore
 	private CustomerSignup customer;
 	
 	//getters and setters
+	public List<Cartitem> getCartItems() {
+		return cartItems;
+	}
+	public void setCartItems(List<Cartitem> cartItems) {
+		this.cartItems = cartItems;
+	}
 	public int getCartid() {
 		return cartid;
 	}
-	public int getGrandtotal() {
+	public double getGrandtotal() {
 		return grandtotal;
 	}
-	public void setGrandtotal(int grandtotal) {
-		this.grandtotal = grandtotal;
+	public void setGrandtotal(double grandTotal2) {
+		this.grandtotal = grandTotal2;
 	}
 	public void setCartid(int cartid) {
 		this.cartid = cartid;

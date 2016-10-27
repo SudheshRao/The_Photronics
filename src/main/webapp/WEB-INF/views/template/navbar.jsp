@@ -93,8 +93,18 @@
 
 			<ul class="nav navbar-nav navbar-right" >
 			<c:if test="${pageContext.request.userPrincipal.name != null}">
-                            <li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
-                            <li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li></c:if>
+                            <c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
+                                <li><a id="dropbtn" href="<c:url value="/cart" />">Cart</a></li>
+                            </c:if>
+                            <li class="dropdown">
+				<a id="dropbtn" class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<b class="caret"></b></a>
+					<ul id ="dropdown-content" class="dropdown-menu">
+						<li><a id="dropbtn" tabindex="-1" href="">${pageContext.request.userPrincipal.name}</a></li>
+						<li><a id="dropbtn" href="">Drums</a></li>
+						<li><a id="dropbtn" href="<c:url value="/j_spring_security_logout" />">Logout</a></li>							
+					</ul>
+			</li>
+                            </c:if>
                             <c:if test="${pageContext.request.userPrincipal.name == 'admin'}">
 			<li><a id="dropbtn" href="addproduct"><span class="glyphicon glyphicon-log-in"></span>  Add Product</a></li></c:if>
 			<c:if test="${pageContext.request.userPrincipal.name == null}">

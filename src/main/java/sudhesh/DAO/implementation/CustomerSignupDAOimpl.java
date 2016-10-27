@@ -1,5 +1,8 @@
 package sudhesh.DAO.implementation;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -7,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
 
 import sudhesh.DAO.CustomerSignupDAO;
 import sudhesh.model.Address;
@@ -73,6 +77,26 @@ public class CustomerSignupDAOimpl implements CustomerSignupDAO {
         logger.info("Customer saved successfully, Customer Details="+p);
     }
  
+    public CustomerSignup getCustomerById (int customerId) {
+        Session session = sessionFactory.getCurrentSession();
+        return (CustomerSignup) session.get(CustomerSignup.class, customerId);
+    }
 
+    public List<CustomerSignup> getAllCustomers() {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from customer");
+        List<CustomerSignup> customerList = query.list();
+
+        return customerList;
+    }
+
+    public CustomerSignup getCustomerByUsername (String username) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from CustomerSignup where username = :un");
+        query.setParameter("un", username);
+        CustomerSignup customer = (CustomerSignup) query.uniqueResult();
+        session.flush();
+        return customer;
+    }
 
 }
