@@ -22,8 +22,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
+import sudhesh.Service.CartitemService;
 import sudhesh.Service.ProductService;
-
+import sudhesh.model.Cartitem;
 import sudhesh.model.Product;
 
 /*
@@ -37,7 +38,9 @@ public class ProductController {
 	
 	@Autowired
 	ProductService productService;
-
+	 @Autowired
+	 CartitemService cartItemService;
+	 
 	@Qualifier(value="productService")
 	public void setProductservice(ProductService productservice) {
 		this.productService = productservice;
@@ -129,8 +132,11 @@ public class ProductController {
 
 	 //delete a product
 	 @RequestMapping("/deleteproduct/{id}")
-	 public String deleteProduct(@PathVariable int id, Model model, HttpServletRequest request) {
-		 
+	 public String deleteProduct(@PathVariable(value = "id") int id, Model model, HttpServletRequest request) {
+		 System.out.println("Path = " + id);
+
+		 List<Cartitem> cartItem = cartItemService.getCartItemByProductId(id);
+		 cartItemService.removeCartItemList(cartItem);
 		 String rootDirectory = request.getSession().getServletContext().getRealPath("/");
 		 path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + id + ".jpg");
 		 System.out.println("Path = " + path);
@@ -145,7 +151,7 @@ public class ProductController {
 
 	        Product product = productService.getProductById(id);
 	        productService.deleteProduct(product);
-	        return "redirect:/viewproduct";
+	        return "redirect:/";
 	    }
 	 
 	 // product info code

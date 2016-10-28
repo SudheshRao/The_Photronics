@@ -51,5 +51,22 @@ public class CartitemDAOImpl implements CartitemDAO {
 
 	        return (Cartitem) query.uniqueResult();
 	    }
-
+	    
+	    public List<Cartitem> getCartItemByProductId (int id) {
+	        Session session = sessionFactory.getCurrentSession();
+	        Query query = session.createQuery("from Cartitem where pid = ?");
+	        query.setInteger(0, id);
+	        session.flush();
+	        System.out.println(query);
+	        List<Cartitem> cartitem= query.list();
+	        return cartitem;
+	    }
+	    public void removeCartItemList (List<Cartitem> cartItem) {
+        Session session = sessionFactory.getCurrentSession();
+        for (Cartitem item : cartItem) {
+            removeCartItem(item);
+        }
+        
+        session.flush();
+    }
 }

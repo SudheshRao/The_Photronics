@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>"/>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		
 		<title>products</title>
 		<style>body {background-color:#212121 !important}
-
-
+#menu {min-width:50px !important;}
 .item {
   position: relative;
   overflow: hidden;
@@ -68,34 +68,27 @@
 					<c:if test="${pageContext.request.userPrincipal.name == 'admin'}">
 					<a href="editproduct/${p.id}"><span class="glyphicon glyphicon-pencil"></span></a></c:if>
 				<c:if test="${pageContext.request.userPrincipal.name == 'admin'}">
-				<a  data-toggle="modal" href="#myModal"><span class="glyphicon glyphicon-trash"></span></a>
-				<div id="myModal" class="modal fade">
-			<div class="modal-dialog">
-<!-- Modal content-->
-		<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-			<h4 class="modal-title">Delete</h4>
-		</div>
+				<div class = "btn-group" >
+				 <a class="dropdown-toggle btn-xs" data-toggle = "dropdown">
+<span class="glyphicon glyphicon-trash"></span>
+   </a>
+				
+   <ul class = "dropdown-menu " id= "menu">
+      <li class="dropdown-header" >Sure?</li>
+      <li><a href="deleteproduct/${p.id}">Yes</a></li>
+      <li><a href = "#">No</a></li>
+
+   </ul>
+   
+</div>
+		</c:if></div></div></div>
+
+				
+			
 		
-		<div class="modal-body">
-			<p>Are you sure you want to delete this item?</p>
-		</div>
 		
-		<div class="modal-footer">
-			<a class="btn btn-danger" href="deleteproduct/${p.id}"><span class="fa fa-check"></span> Yes</a>
-			<a class="btn btn-success" data-dismiss="modal"><span class="fa fa-times"></span> No</a>
-		</div>
-		
-		</div>
-		</div>
-		</div>
-				</c:if>
-				</div>
-			</div>
-		</div>
-		
-	</c:forEach>
+	</c:forEach></div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="<c:url value="/resources/theme/js/ajsc.js" /> "></script>	
 <script src="<c:url value="/resources/bootstrap/js/jquery-3.1.0.min.js"/>"></script> 

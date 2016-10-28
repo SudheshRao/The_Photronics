@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+                   xmlns:mvc="http://www.springframework.org/schema/mvc"
+                   xmlns:tx="http://www.springframework.org/schema/tx"
+                   xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                                http://www.springframework.org/schema/beans/spring-beans.xsd
+                                http://www.springframework.org/schema/security 
+                                http://www.springframework.org/schema/security/spring-security.xsd
+                                http://www.springframework.org/schema/tx 
+                                http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+                                http://www.springframework.org/schema/mvc
+                                http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                                http://www.springframework.org/schema/context 
+                                http://www.springframework.org/schema/context/spring-context.xsd">
+
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="org.h2.Driver"/>
+    <property name="url" value="jdbc:h2:tcp://localhost/~/photronics_DB"/>
+    <property name="username" value="sudhesh"/>
+    <property name="password" value="sudheshraop"/>
+   </bean>
+
+
+
+
+    <bean id="sessionFactory"    class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="sudhesh"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect
+                
+                </prop>
+                <prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>  
+                <prop key="hibernate.show_sql">true</prop>
+                
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+               
+            
+                </props>
+        </property> 
+        
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+	
+	<security:http auto-config="true" use-expressions="true">
+
+        <security:intercept-url pattern="/addproduct*/**" access="hasRole('ROLE_ADMIN')" />
+        <security:intercept-url pattern="/viewproduct*/**" access="permitAll" />
+        <security:form-login
+            login-page="/login"
+            default-target-url="/"
+            authentication-failure-url="/login?error"
+            login-processing-url="/j_spring_security_check"
+            username-parameter="j_username"
+            password-parameter="j_password" />
+        <security:logout
+            logout-success-url="/login?logout" logout-url="/j_spring_security_logout"/>
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:jdbc-user-service data-source-ref="dataSource"
+                                        authorities-by-username-query="SELECT username, authority FROM authorities WHERE username = ?"
+                                        users-by-username-query="SELECT username, password, cid FROM customerlogin WHERE username = ?" />
+        </security:authentication-provider>
+    </security:authentication-manager>
+	
+
+    
+    <!-- context:component-scan base-package="com.journaldev.spring" />
+     
+    <tx:annotation-driven transaction-manager="transactionManager"/> -->
+     
+     
+</beans>
