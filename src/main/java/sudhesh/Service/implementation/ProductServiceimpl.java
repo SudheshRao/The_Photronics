@@ -55,4 +55,10 @@ public class ProductServiceimpl implements ProductService {
 		public void deleteProduct(Product product) {
 			productdao.deleteProduct(product);
 		}
+		@Transactional
+		public List<Product> getProduct() {
+			return productdao.getProduct();
+		}
+
+
 }

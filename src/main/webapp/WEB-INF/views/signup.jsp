@@ -38,31 +38,33 @@
 				</div>
 				<div class="row">
 				<div class="col-sm-4 "><label class="control-label pull-left" for="username">Username</label></div>
-				<div class="col-sm-8 "><form:input path="username" id="username" class="form-control" placeholder="your name"/></div>
+				<div class="col-sm-8 "><form:input path="username" id="username" class="form-control" placeholder="your name" pattern=".{4,15}" required="true"/></div>
 				<form:errors path="username" cssClass="error"/>
 				</div>
 				
 				<div class="row">
 				<div class="col-sm-4 "><label class="control-label pull-left" for="phno">phone number</label></div>
-				<div class="col-sm-8 "><form:input path="phno" id="phno" class="form-control" placeholder="phone number"  /></div>
+				<div class="col-sm-8 "><form:input path="phno" id="phno" class="form-control" placeholder="phone number" pattern="^\d{10}$" required="true"
+			title="Please enter a valid number" /></div>
 				<form:errors path="email" cssClass="error"/>
 				</div>
 				
 				<div class="row">
 				<div class="col-sm-4 "><label class="control-label pull-left" for="email">Email id</label></div>
-				<div class="col-sm-8 "><form:input path="email" id="email" class="form-control" placeholder="email@domain.com"  /></div>
+				<div class="col-sm-8 "><form:input path="email" id="email" class="form-control" placeholder="email@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="true"
+			title="Please enter a valid email" /></div>
 				<form:errors path="email" cssClass="error"/>
 				</div>
 				
 				<div class="row">
 				<div class="col-sm-4 "><label class="control-label pull-left" for="password">Password</label></div>
-				<div class="col-sm-8 "><form:input path="password" type="password" id="password" class="form-control" placeholder="keep it secret"/></div>
+				<div class="col-sm-8 "><form:input path="password" type="password" id="password" class="form-control" placeholder="keep it secret" pattern=".{8,}" required="true"/></div>
 				<form:errors path="password" cssClass="error"/>
 				</div>
 				
 				<div class="row">
 				<div class="col-sm-4 "><label class="control-label pull-left" for="confirmpassword">Confirm Password</label></div>
-				<div class="col-sm-8 "><form:input path="confirmpassword" type="password" id="confirmpassword" class="form-control" placeholder='"ditto"'/></div>
+				<div class="col-sm-8 "><form:input path="confirmpassword" type="password" id="confirmpassword" class="form-control" placeholder='"ditto"' pattern=".{8,}" required="true" title="Should match the above password"/></div>
 				<form:errors path="confirmpassword" type="password" cssClass="error"/>
 				</div>
 				

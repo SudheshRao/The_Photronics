@@ -62,6 +62,7 @@ public class ProductController {
 			return "product";
 			
 		else {
+			
 			byte[] bytes;
 			if (!addproduct.getproductpicture().isEmpty()) {
 
@@ -83,7 +84,7 @@ public class ProductController {
 					System.out.println(ex.getMessage());}
 				}
 			
-			  return "redirect:/viewproduct";	
+			  return "redirect:/allProducts";	
 	    	}}
 	 
 	//view product code
@@ -94,6 +95,14 @@ public class ProductController {
 		model.addAttribute("viewpro", product);
 		return "userviewproduct";
 		}
+	 
+	 @RequestMapping(value="/allProducts")
+	 public String allproduct(Model model,HttpServletRequest request){
+		List<Product> product = productService.getProduct();
+		model.addAttribute("viewpro", product);
+		return "userviewproduct";
+		}
+	 
 	 
 	 //edit product form code
 	 @RequestMapping(value="/editproduct/{id}")

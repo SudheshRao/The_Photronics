@@ -1,5 +1,7 @@
 package sudhesh.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +12,9 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Cartitem {
+public class Cartitem implements Serializable{
+
+    private static final long serialVersionUID = -904360230041854157L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -32,6 +36,13 @@ public class Cartitem {
 	@JoinColumn(name="pid")
 	private Product product;
 	
+	private int prid;
+	public int getPrid() {
+		return prid;
+	}
+	public void setPrid(int prid) {
+		this.prid = prid;
+	}
 	//getters and setters
 	public int getCiid() {
 		return ciid;

@@ -21,8 +21,8 @@ public class OrderServiceImpl implements OrderService {
 	    @Autowired
 	    private CartService cartService;
 
-	    public void addCustomerOrder(Order customerOrder) {
-	        OrderDao.addCustomerOrder(customerOrder);
+	    public void addCustomerOrder(Order order) {
+	        OrderDao.addCustomerOrder(order);
 	    }
 
 	    public double getCustomerOrderGrandTotal(int cartId) {
@@ -36,5 +36,11 @@ public class OrderServiceImpl implements OrderService {
 
 	        return grandTotal;
 	    }
+		public List<Order> getOrderByCartId(int cartid){
+			return OrderDao.getOrderByCartId(cartid);
+		}
+		public void deleteOrder(Order order){
+			OrderDao.deleteOrder(order);
+		}
 
 }

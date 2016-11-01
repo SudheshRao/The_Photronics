@@ -18,5 +18,6 @@ public interface CartitemDAO {
 	public List<Cartitem> getCartItemByProductId(int id);
 
 	public void removeCartItemList(List<Cartitem> cartItem);
+
 	
 }

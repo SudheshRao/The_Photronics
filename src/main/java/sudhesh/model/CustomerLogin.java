@@ -1,5 +1,7 @@
 package sudhesh.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +18,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="customerlogin")
-public class CustomerLogin {
+public class CustomerLogin implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

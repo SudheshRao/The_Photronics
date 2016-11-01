@@ -21,6 +21,7 @@
     response.setHeader("Pragma","no-cache"); //HTTP 1.0
     response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
 --> 
+
 	<div class="divb jumbotron container-fluid" style="margin-top:00px;height:550px;width:100%">
 		
 		<div class="container" style="margin-top:20px;">

@@ -1,5 +1,7 @@
 package sudhesh.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,8 +23,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="customer")
-public class CustomerSignup {
+public class CustomerSignup  implements Serializable{
 	
+    private static final long serialVersionUID = 5140900014886997914L;
+
 	@Id
     @GenericGenerator(name = "customer", strategy = "enhanced-table", 
     				  parameters = {@org.hibernate.annotations.Parameter(name = "customer", value = "hibernate_sequences")})

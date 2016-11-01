@@ -1,5 +1,7 @@
 package sudhesh.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,8 +18,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table (name="product")
-public class Product {
+public class Product implements Serializable{
 	
+    private static final long serialVersionUID = -3532377236419382983L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	public int id;

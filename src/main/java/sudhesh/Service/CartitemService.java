@@ -19,4 +19,5 @@ public interface CartitemService {
 
 	public void removeCartItemList(List<Cartitem> cartItem);
 
+
 }

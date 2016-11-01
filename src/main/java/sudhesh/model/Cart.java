@@ -1,6 +1,7 @@
 package sudhesh.model;
 
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -21,7 +22,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 
 @Entity
-public class Cart {
+public class Cart implements Serializable {
+    private static final long serialVersionUID = 3940548625296145582L;
+
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

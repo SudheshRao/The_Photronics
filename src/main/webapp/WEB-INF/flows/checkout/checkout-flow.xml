@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow 
+      http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+
+    <var name="order" class="sudhesh.model.Order" />
+
+    <action-state id="addCartToOrder">
+        <evaluate expression="cartDAOImpl.validate(requestParameters.cartid)" result="order.cart" />
+        <transition to="InvalidCartWarning" on-exception="java.io.IOException" />
+        <transition to="collectCustomerInfo" />
+    </action-state>
+
+    <view-state id="collectCustomerInfo" view="collectCustomerInfo.jsp" model="order">
+    	<transition on="editCustomerInfoCollected" to="collectShippingDetail" />
+        <transition on="customerInfoCollected" to="orderConfirmation" />
+    </view-state>
+
+    <view-state id="collectShippingDetail" view="collectShippingDetail.jsp" model="order">
+        <transition on="shippingDetailCollected" to="orderConfirmation" />
+        <transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
+    </view-state>
+
+    <view-state id="orderConfirmation">
+        <transition on="orderConfirmed" to="processOrder" />
+        <transition on="backToCollectShippingDetail" to="collectShippingDetail" />
+    </view-state>
+
+    <action-state id="processOrder">
+        <evaluate expression="cartitemDAOImpl.removeAllCartItems(order.cart)" />
+        <transition to="thankCustomer" />
+    </action-state>
+
+
+    <view-state id="thankCustomer" model="order">
+        <transition to="endState" />
+    </view-state>
+
+    <end-state id="endState" />
+
+    <view-state id="invalidCartWarning">
+        <transition to="endState" />
+    </view-state>
+
+    <end-state id="cancelCheckout" view="checkOutCancelled.jsp" />
+
+    <global-transitions>
+        <transition on="cancel" to="cancelCheckout" />
+    </global-transitions>
+
+
+</flow>

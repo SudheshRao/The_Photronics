@@ -1,8 +1,10 @@
 package sudhesh.DAO;
 
 import java.io.IOException;
+import java.util.List;
 
 import sudhesh.model.Cart;
+import sudhesh.model.Cartitem;
 
 public interface CartDAO {
 	
@@ -12,6 +14,7 @@ public interface CartDAO {
 	
 	 public Cart validate(int cartId) throws IOException;
 	 
-	 
+		public List<Cartitem> getCartItemByCartId(int id);
+
 
 }

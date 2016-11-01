@@ -1,5 +1,7 @@
 package sudhesh.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Address {
+public class Address implements Serializable{
+	
+    private static final long serialVersionUID = -6091579459463730482L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int aid;

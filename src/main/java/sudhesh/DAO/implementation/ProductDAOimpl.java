@@ -75,6 +75,15 @@ public class ProductDAOimpl implements ProductDAO{
 	        session.flush();
 
 	    }
+	    
+	    public List<Product> getProduct() {
 	    	
+	    	Session session = sessionFactory.getCurrentSession();
+	    	Query query = session.createQuery("from Product");
+	    	List<Product> product = query.list();
+	    	session.flush();
+	    	
+	    	return  product;
+	    }
 	    	
 }

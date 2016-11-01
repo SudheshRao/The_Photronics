@@ -16,10 +16,12 @@
         <div  ng-app="cartApp" ng-controller = "cartCtrl" ng-init="initCartId('${cartid}')" class="container" >
             <div class="jumbotron">
                 <div class="container-fluid">
-                    <h2 class="container">Your Shopping Cart</h2>                   
+                    <h2 class="f container">Your Shopping Cart</h2>                   
                 </div >
-                 <div class="pull-right"><a href="#" class="btn btn-danger pull-left" ng-click="clearCart('${cartid}' )"><span
-                        class="glyphicon glyphicon-remove-sign"></span>Clear Cart</a></div>
+                 <div class="pull-right">
+                 <a href="#" class="btn btn-danger pull-left" ng-click="clearCart('${cartid}' )">Clear Cart</a>
+                 <a href="<spring:url value="/order/${cartid}"/>" class="btn btn-success pull-right">Proceed to Checkout</a>
+                        </div>
 </div>
 
 	<div class="row">

@@ -55,7 +55,7 @@ public class CartresController {
 	        Cart cart = customer.getCart();
 	        Product product = productService.getProductById(id);
 	        List<Cartitem> cartItems = cart.getCartItems();
-
+	        if(product.getStock()>0){
 	        for (int i=0; i<cartItems.size(); i++) {
 	            if(product.getId()==cartItems.get(i).getProduct().getId()){
 	                Cartitem cartItem = cartItems.get(i);
@@ -68,11 +68,12 @@ public class CartresController {
 
 	        Cartitem cartItem = new Cartitem();
 	        cartItem.setProduct(product);
+	        cartItem.setPrid(id);
 	        cartItem.setQuantity(1);
 	        cartItem.setCid(cart.getCartid());
 	        cartItem.setTotal(product.getCost()*cartItem.getQuantity());
 	        cartItem.setCart(cart);
-	        cartItemService.addCartItem(cartItem);
+	        cartItemService.addCartItem(cartItem);}
 	    }catch(Exception ex)
 	    {
 

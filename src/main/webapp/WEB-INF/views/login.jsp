@@ -38,9 +38,6 @@
 
 <div class="form-horizontal">
 		<div class="form form-group-md">
-			 <c:if test="${not empty msg}">
-                <div class="msg">${msg}</div>
-            </c:if>
 				
 				<div class="imgcontainer">
 					<img style="width:150px;height:150px;" class="img-responsive center-block img-circle"src="<c:url value="/resources/images/login-image.jpg"/>" alt="login-image">
