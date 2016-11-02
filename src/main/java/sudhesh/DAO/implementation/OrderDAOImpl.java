@@ -22,7 +22,7 @@ public class OrderDAOImpl implements OrderDAO {
 
      public void addCustomerOrder(Order order) {
          Session session = sessionFactory.getCurrentSession();
-         session.saveOrUpdate(order);
+         session.save(order);
          session.flush();
      }
  	public List<Order> getOrderByCartId(int cartid){
