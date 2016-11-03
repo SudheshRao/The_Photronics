@@ -15,6 +15,8 @@ import javax.persistence.Id;
 @Entity
 public class Authorities implements Serializable {
 	
+
+	private static final long serialVersionUID = -7833758551782008779L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int aid;

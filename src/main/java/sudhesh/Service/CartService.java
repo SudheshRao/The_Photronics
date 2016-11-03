@@ -14,4 +14,6 @@ public interface CartService {
 	
 	public List<Cartitem> getCartItemByCartId(int cartid);
 
+	public Cart getCartByCartId(int cartid);
+
 }

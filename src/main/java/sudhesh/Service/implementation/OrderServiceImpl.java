@@ -10,6 +10,7 @@ import sudhesh.Service.CartService;
 import sudhesh.Service.OrderService;
 import sudhesh.model.Cart;
 import sudhesh.model.Cartitem;
+import sudhesh.model.FinalOrder;
 import sudhesh.model.Order;
 
 @Service
@@ -41,6 +42,10 @@ public class OrderServiceImpl implements OrderService {
 		}
 		public void deleteOrder(Order order){
 			OrderDao.deleteOrder(order);
+		}
+		public void addfinalorder(FinalOrder order){
+			OrderDao.addfinalorder(order);
+
 		}
 
 }

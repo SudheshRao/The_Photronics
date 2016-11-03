@@ -19,7 +19,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="customerlogin")
 public class CustomerLogin implements Serializable {
-	
+
+	private static final long serialVersionUID = -3212693696567628355L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int cid;	

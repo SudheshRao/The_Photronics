@@ -2,6 +2,7 @@ package sudhesh.Service;
 
 import java.util.List;
 
+import sudhesh.model.FinalOrder;
 import sudhesh.model.Order;
 
 public interface OrderService {
@@ -13,5 +14,7 @@ public interface OrderService {
 	public List<Order> getOrderByCartId(int cartid);
 
 	public void deleteOrder(Order order);
+
+	public void addfinalorder(FinalOrder order);
 
 }

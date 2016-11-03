@@ -26,4 +26,8 @@ public class CartServiceImpl implements CartService {
     public List<Cartitem> getCartItemByCartId (int id) {
         return cartDao.getCartItemByCartId(id);
     }
+	public Cart getCartByCartId(int cartid){
+		return cartDao.getCartByCartId(cartid);
+	}
+
 }

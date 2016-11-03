@@ -29,8 +29,13 @@ public class CartDAOImpl implements CartDAO {
 	        Session session = sessionFactory.getCurrentSession();
 	        return (Cart) session.get(Cart.class, cartid);
 	    }
-
-
+	    
+		public Cart getCartByCartId(int cartid){
+	        Session session = sessionFactory.getCurrentSession();
+	        Query query= session.createQuery("from Cart where cartid=:un");
+	        query.setParameter("un", cartid);
+	        return (Cart) query;
+		}
 	    
 	    public List<Cartitem> getCartItemByCartId (int id) {
 	        Session session = sessionFactory.getCurrentSession();
