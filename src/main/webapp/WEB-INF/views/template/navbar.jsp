@@ -1,4 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <!DOCTYPE html>
  <html>
@@ -68,6 +70,9 @@
 									<li><a id="dropbtn" tabindex="1" href="#">Acoustic</a></li>
 									<li><a id="dropbtn" href="#">Digital</a></li>
 								</ul></li>
+								
+							<li class="dropdown-submenu"><a id="dropbtn" href="allProducts">All Products</a>
+
 							
 						</ul>
 				</li>
@@ -75,12 +80,12 @@
 	<!-- search tab -->
 				
 				<li>
-					<form action="viewproduct" class="navbar-form navbar-left ">
+					<form action="search" method="post" class="navbar-form navbar-left ">
 					    
 						<div  id="searchsize"  class="input-group">
-							<input type="Search" placeholder="Search..." class="form-control"  />
+							<input title="atleast 3 characters should match the products identity" name="value" type="Search" placeholder="Search..." class="form-control"  />
 							<div class="input-group-btn">
-							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+							<button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
 							</div>
 						</div>
 						
@@ -100,7 +105,7 @@
 				<a id="dropbtn" class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<b class="caret"></b></a>
 					<ul id ="dropdown-content" class="dropdown-menu">
 						<li><a id="dropbtn" tabindex="-1" href="">${pageContext.request.userPrincipal.name}</a></li>
-						<li><a id="dropbtn" href="">Drums</a></li>
+						<li><a id="dropbtn" href="">Settings</a></li>
 						<li><a id="dropbtn" href="<c:url value="/j_spring_security_logout" />">Logout</a></li>							
 					</ul>
 			</li>

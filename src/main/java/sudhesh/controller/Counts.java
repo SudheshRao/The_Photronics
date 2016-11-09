@@ -28,11 +28,9 @@ public class Counts extends TimerTask {
     public static int main(int cartid){
     	int carid=cartid;
         TimerTask timerTask = new Counts();
-        //running timer task as daemon thread
         Timer timer = new Timer(true);
         timer.schedule(timerTask, 0);
         System.out.println("TimerTask started"+cartid);
-        //cancel after sometime
         try {
             Thread.sleep(30000);
         } catch (InterruptedException e) {

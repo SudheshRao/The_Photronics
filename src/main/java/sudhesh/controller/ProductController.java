@@ -38,8 +38,9 @@ public class ProductController {
 	
 	@Autowired
 	ProductService productService;
-	 @Autowired
-	 CartitemService cartItemService;
+	
+	@Autowired
+	CartitemService cartItemService;
 	 
 	@Qualifier(value="productService")
 	public void setProductservice(ProductService productservice) {
@@ -96,6 +97,7 @@ public class ProductController {
 		return "userviewproduct";
 		}
 	 
+	 //view all products
 	 @RequestMapping(value="/allProducts")
 	 public String allproduct(Model model,HttpServletRequest request){
 		List<Product> product = productService.getProduct();
@@ -165,7 +167,12 @@ public class ProductController {
 	 
 	 // product info code
 	 @RequestMapping("/infoproduct/{id}")
-	    public String info(@PathVariable int id,Model model) {
+	    public String info(@PathVariable int id) {
+		 return "redirect:/infoproduct?id="+id;
+	    }
+	 @RequestMapping("infoproduct")
+	 public String infopro(Model model,HttpServletRequest request) {
+		 int id=Integer.parseInt(request.getParameter("id"));
 		 Product prod= productService.getProductById(id);
 		 model.addAttribute("info", prod);
 	        return "infoproduct";

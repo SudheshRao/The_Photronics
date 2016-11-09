@@ -69,5 +69,14 @@ public class CartitemDAOImpl implements CartitemDAO {
         
         session.flush();
     }
+		public List<Cartitem> getCartItemByCartId(int cartid){
+			  Session session = sessionFactory.getCurrentSession();
+		        Query query = session.createQuery("from Cartitem where cartid = ?");
+		        query.setInteger(0, cartid);
+		        session.flush();
+		        List<Cartitem> cartitem= query.list();
+		        return cartitem;
+		}
+
 }
 

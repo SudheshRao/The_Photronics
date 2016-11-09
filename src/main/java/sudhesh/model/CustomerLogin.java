@@ -26,12 +26,18 @@ public class CustomerLogin implements Serializable {
 	private int cid;	
 	private String username;
 	private String password;
+	private boolean enabled;
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="id")
 	private CustomerSignup cs;
 	
 	//getters and setters
-	
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 	public CustomerSignup getCs() {
 		return cs;
 	}

@@ -29,7 +29,7 @@
   z-index: 1;background-color:rgba(0,0,0,0.7) !important;
 }
 
-.divb::before {filter:blur(2px);
+.divb::before {filter:blur(0px);
   content: "";
   position: absolute;
   top: 0; 
@@ -38,7 +38,7 @@
   height: 100%;  
   opacity: 0.3; 
   z-index: -1;
-  background: url("../../../resources/images/Rock-the-Garden-Minneapolis-music-photography0021.jpg") no-repeat center center fixed;
+  background: url("../../../resources/images/3630-bring-it-on.jpg") no-repeat center center fixed;
   background-size:cover;
 }
 .diva {
@@ -54,7 +54,7 @@
   height: 100%;  
   opacity: 0.3; 
   z-index: -1;
-  background: url("../../../resources/images/14mqm9h.jpg") no-repeat center center fixed;
+  background: url("../../../resources/images/festival.jpg") no-repeat center center fixed;
   background-size:cover;
 }
 @media(max-width:786px){

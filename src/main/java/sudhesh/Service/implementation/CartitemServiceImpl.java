@@ -37,5 +37,8 @@ public class CartitemServiceImpl implements CartitemService {
     public void removeCartItemList(List<Cartitem> cartItem) {
         cartItemDao.removeCartItemList(cartItem);
     }
- 
+	public List<Cartitem> getCartItemByCartId(int cartid){
+		return cartItemDao.getCartItemByCartId(cartid);
+	}
+
 }

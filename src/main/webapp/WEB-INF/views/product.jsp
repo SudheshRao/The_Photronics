@@ -57,7 +57,7 @@
 				
 				<div class="row">
 				<div class="col-sm-4"><label class="control-label pull-left" for="Specification">Specification</label></div>
-				<div class="col-sm-8"><form:input path="spec" id="Specification" class="form-control" placeholder="specification"/></div>
+				<div class="col-sm-8"><form:textarea path="spec" id="Specification" class="form-control" placeholder="specification"/></div>
 				<form:errors path="spec" cssClass="error"/>
 				</div>
 				

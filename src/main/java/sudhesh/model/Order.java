@@ -32,11 +32,20 @@ public class Order implements Serializable {
 	    @OneToOne
 	    @JoinColumn(name = "aid")
 	    private Address billingAddress;
-	    
-	    String customername;
+		public long total;
+		String customername;
 	    String deliveryadrress;
 	    String manufacturer;
 	    int quant;
+	    
+	    public long getTotal() {
+			return total;
+		}
+
+		public void setTotal(long total) {
+			this.total = total;
+		}
+
 	    public int getQuant() {
 			return quant;
 		}

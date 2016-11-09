@@ -50,6 +50,7 @@ public class CustomerSignupDAOimpl implements CustomerSignupDAO {
         cl.setCs(p);
         cl.setUsername(p.getUsername());
         cl.setPassword(p.getPassword());
+        cl.setEnabled(true);
         session.persist(cl);
         
         // entering authority to the customer in authorities table

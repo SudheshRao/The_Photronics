@@ -22,7 +22,7 @@
     response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
 --> 
 
-	<div class="divb jumbotron container-fluid" style="margin-top:00px;height:550px;width:100%">
+	<div class="divb jumbotron container-fluid" style="margin-top:00px;height:500px;width:100%">
 		
 		<div class="container" style="margin-top:20px;">
 			<font size="6px"><b style="color:white">The_Photronics</b></font>
@@ -58,6 +58,10 @@
 			<div class="item active" id="slide1">
 				<img class="img-responsive" src="<c:url value="/resources/images/bob.jpg"/>" alt="guitar"/>				
 			</div>
+			
+			<div class="item" id="slide4">
+				<img class="img-responsive" src="<c:url value="/resources/images/guitar_large.jpg"/>" alt="guitar"/>
+			</div>
 
 			<div class="item" id="slide2">
 				<img class="img-responsive" src="<c:url value="/resources/images/drums_large.jpg"/>" alt="drums"/>				
@@ -65,10 +69,6 @@
 
 			<div class="item" id="slide3">
 				<img class="img-responsive" src="<c:url value="/resources/images/piano_large.jpg"/>" alt="piano"/>				
-			</div>
-
-			<div class="item" id="slide4">
-				<img class="img-responsive" src="<c:url value="/resources/images/violin_large.jpg"/>" alt="violin"/>
 			</div>
   
 		</div><!-- slides end -->
@@ -96,32 +96,26 @@
 				<div class="cd panel panel-default"><div class="panel-heading"><h1 class="panel-title">Guitar</h1></div>
 				<img class="img-circle" src="<c:url value="/resources/images/feature-guitar.jpg"/>" alt="guitar"/>
 				<p>Direct from the factory</p>
-				<a href=""  class="btn btn-warning btn-block">Shop Now</a></div>
+				<a href="viewproduct?param=guitar"  class="btn btn-warning btn-block">Shop Now</a></div>
 			</div>
 		
 			<div class="col-sm-4 feature">
 				<div class="cd  panel panel-default"><div class="panel-heading"><h1 class="panel-title">Drums</h1></div>
 				<img class="img-circle" src="<c:url value="/resources/images/feature-drums.jpg"/>" alt="drums"/>
 				<p>Direct from the factory</p>
-				<a href=""  class="btn btn-danger btn-block">Shop Now</a></div>		
+				<a href="viewproduct?param=drums"  class="btn btn-danger btn-block">Shop Now</a></div>		
 			</div>
 		
 			<div class="col-sm-4 feature">
-				<div class="cd panel panel-default"><div class="panel-heading"><h1 class="panel-title">Violin</h1></div>
-				<img class="img-circle" src="<c:url value="/resources/images/feature-violin.jpg"/>" alt="violin"/>
+				<div class="cd panel panel-default"><div class="panel-heading"><h1 class="panel-title">Piano</h1></div>
+				<img class="img-circle" src="<c:url value="/resources/images/feature-violin.jpg"/>" alt="piano"/>
 				<p>Direct from the factory</p>
-				<a href="" class="btn btn-info btn-block">Shop Now</a></div>
+				<a href="viewproduct?param=piano" class="btn btn-info btn-block">Shop Now</a></div>
 			</div>
 		</div>
 		</div><!-- container ends -->
 	</div><!-- feature section ends -->
-	<div class="divb jumbotron container-fluid" style="margin-top:00px;height:200px;width:100%">
-		
-		<div class="container" style="margin-top:20px;">
-			<font size="6px">The_Photronics</font>
-			<div class="nav navbar navbar-right"><font size="6px"><i style="color:black;">Best online</i> <b style="color:red;">Music Store</b></font></div>
-		</div>
-	</div>	
+
 	<div class="diva jumbotron container-fluid" style="margin-top:00px;height:200px;width:100%">
 		
 		<div class="container" style="margin-top:20px;">

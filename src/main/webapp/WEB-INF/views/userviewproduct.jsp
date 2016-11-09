@@ -51,7 +51,7 @@
 	<div ng-app="cartApp">
 	<c:forEach items="${viewpro}" var="p">
 
-		<div class="container col-sm-6 col-md-6 col-lg-6" style="background:white;border:10px solid #212121;">
+		<div class="container col-sm-6 col-md-6 col-lg-6" style="height:280px;background:white;border:10px solid #212121;">
 			<div class="row"><div>
 			<div onclick="location.href='infoproduct/${p.id}';"style="cursor: pointer;text-decoration:none; color:black;">
 				<div class="item col-sm-6"><img style="width:auto;height:250px;" class="center-block" src="<c:url value="/resources/images/${p.id}.jpg"/>" alt="productimage"/></div>

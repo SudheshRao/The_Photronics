@@ -28,19 +28,21 @@
         <transition on="backToCollectShippingDetail" to="collectShippingDetail" />
     </view-state>
 
-    <action-state id="processOrder">        
-        <evaluate expression="cartitemDAOImpl.removeAllCartItems(order.cart)" />
-                            <evaluate expression="orderDAOImpl.removeAllOrder(order.cart)" />              
-                      
-        <transition to="thankCustomer" />
+    <action-state id="processOrder">   
+            <evaluate expression="cartitemDAOImpl.removeAllCartItems(order.cart)" />                                     
+        <transition to="thankCustomers" />
     </action-state>
 
 
-    <view-state id="thankCustomer" >
+    <action-state id="thankCustomers" >
+    <evaluate expression="orderDAOImpl.removeAllOrder(order.cart)" />  
+        <transition to="thankCustomer" />
+    </action-state>
     
+<view-state id="thankCustomer">
         <transition to="endState" />
     </view-state>
-
+    
     <end-state id="endState" />
 
     <view-state id="invalidCartWarning">

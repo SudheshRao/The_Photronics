@@ -19,17 +19,16 @@ public class HomeController {
 	//home page mapping
     @RequestMapping("/")
     public String home() {
+    	
         return "index";
     }
    
     //login page mapping
     @RequestMapping("/login")
-    public String login(@RequestParam(value="error", required = false) String error, @RequestParam(value="logout", required = false) String logout, Model model) throws IOException {
+    public String login(@RequestParam(value="error", required = false) String error, Model model) throws IOException {
+    	
         if (error!=null) {
             model.addAttribute("error", "Invalid username and password");
-        }
-        if (logout!=null) {
-        	
         }
         
         return "login";

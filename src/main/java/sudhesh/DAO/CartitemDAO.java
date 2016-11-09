@@ -19,5 +19,7 @@ public interface CartitemDAO {
 
 	public void removeCartItemList(List<Cartitem> cartItem);
 
+	public List<Cartitem> getCartItemByCartId(int cartid);
+
 	
 }

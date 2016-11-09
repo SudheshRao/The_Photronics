@@ -19,5 +19,7 @@ public interface CartitemService {
 
 	public void removeCartItemList(List<Cartitem> cartItem);
 
+	public List<Cartitem> getCartItemByCartId(int cartid);
+
 
 }

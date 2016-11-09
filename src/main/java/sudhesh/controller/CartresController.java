@@ -23,12 +23,16 @@ import sudhesh.model.Cartitem;
 import sudhesh.model.CustomerSignup;
 import sudhesh.model.Product;
 
+/*
+ * Cart Resource controller
+ * created by sudhesh rao p 
+ */
 
 @Controller
 @RequestMapping("/res/cart")
 public class CartresController {
 	
-	 @Autowired
+		@Autowired
 	    private CartService cartService;
 
 	    @Autowired
@@ -40,31 +44,39 @@ public class CartresController {
 	    @Autowired
 	    private ProductService productService;
 
+	    //to get cart by its id
 	    @RequestMapping("/{cartid}")
-	    public @ResponseBody
-	    Cart getCartById (@PathVariable(value = "cartid") int cartid) {System.out.println("1");
+	    public @ResponseBody Cart getCartById (@PathVariable(value = "cartid") int cartid) {
+	    	
 	        return cartService.getCartById(cartid);
 	    }
 
+	    //add item to cart
 	    @RequestMapping(value = "/add/{id}", method = RequestMethod.PUT)
 	    @ResponseStatus(value = HttpStatus.NO_CONTENT)
 	    public void addItem (@PathVariable(value ="id") int id) {
-	    	try{ User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	    	
+	    	try{ 
+	    		
+	    	User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 	    	
 	        CustomerSignup customer = customerService.getCustomerByUsername(user.getUsername());
 	        Cart cart = customer.getCart();
 	        Product product = productService.getProductById(id);
 	        List<Cartitem> cartItems = cart.getCartItems();
+	        
 	        if(product.getStock()>0){
-	        for (int i=0; i<cartItems.size(); i++) {
-	            if(product.getId()==cartItems.get(i).getProduct().getId()){
-	                Cartitem cartItem = cartItems.get(i);
-	                cartItem.setQuantity(cartItem.getQuantity()+1);
-	                cartItem.setTotal(product.getCost()*cartItem.getQuantity());
-	                cartItemService.addCartItem(cartItem);
-	                return;
-	            }
-	        }
+	        	
+	        	for (int i=0; i<cartItems.size(); i++) {
+	        		
+	        		if(product.getId()==cartItems.get(i).getProduct().getId()){
+	        			
+	        			Cartitem cartItem = cartItems.get(i);
+	        			cartItem.setQuantity(cartItem.getQuantity()+1);
+	        			cartItem.setTotal(product.getCost()*cartItem.getQuantity());
+	        			cartItemService.addCartItem(cartItem);
+	        			}
+	        		}
 
 	        Cartitem cartItem = new Cartitem();
 	        cartItem.setProduct(product);
@@ -73,14 +85,16 @@ public class CartresController {
 	        cartItem.setCid(cart.getCartid());
 	        cartItem.setTotal(product.getCost()*cartItem.getQuantity());
 	        cartItem.setCart(cart);
-	        cartItemService.addCartItem(cartItem);}
-	    }catch(Exception ex)
-	    {
-
-	    	System.out.println("Exception : " + ex.getMessage());
+	        cartItemService.addCartItem(cartItem);
+	        }
+	        
+	    	}catch(Exception ex) {
+	    		
+	    		System.out.println("Exception : " + ex.getMessage());
+	    		}
 	    }
-	    }
 
+	    // to remove item from cart
 	    @RequestMapping(value = "/remove/{ciid}", method = RequestMethod.PUT)
 	    @ResponseStatus(value = HttpStatus.NO_CONTENT)
 	    public void removeItem (@PathVariable(value = "ciid") int ciid) {
@@ -90,10 +104,12 @@ public class CartresController {
 
 	    }
 
+	    //to clear all items from cart
 	    @RequestMapping(value = "/clear/{cartid}", method = RequestMethod.PUT)
 	    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-	    public void clearCart(@PathVariable(value = "cartid") int cartid) {System.out.println("2");
-	        Cart cart = cartService.getCartById(cartid);System.out.println("3");
+	    public void clearCart(@PathVariable(value = "cartid") int cartid){
+	    	
+	        Cart cart = cartService.getCartById(cartid);
 	        cartItemService.removeAllCartItems(cart);
 	    }
 

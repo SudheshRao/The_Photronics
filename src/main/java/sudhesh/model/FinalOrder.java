@@ -6,9 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 @Entity
 @Table(name="finalorder")
 public class FinalOrder implements Serializable {
@@ -25,7 +24,17 @@ public class FinalOrder implements Serializable {
 	    String deliveryadrress;
 	    String manufacturer;
 	    int quant;
-	    public int getQuant() {
+		public long total;
+
+	    public long getTotal() {
+			return total;
+		}
+
+		public void setTotal(long total) {
+			this.total = total;
+		}
+
+		public int getQuant() {
 			return quant;
 		}
 

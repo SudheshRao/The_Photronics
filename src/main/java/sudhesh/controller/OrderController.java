@@ -18,6 +18,10 @@ import sudhesh.model.CustomerSignup;
 import sudhesh.model.Order;
 import sudhesh.model.Product;
 
+/*
+ * Order controller
+ * created by sudhesh rao p 
+ */
 
 @Controller
 public class OrderController {
@@ -31,24 +35,30 @@ public class OrderController {
     @Autowired
     private ProductService ps;
     
+    //Proceed to checkout action
     @RequestMapping("/order/{cartid}")
     public String createOrder(@PathVariable("cartid") final int cartid) {
       
+    	//thread start the timer and ellapse function call
        Thread thread1 = new Thread() {
+    	   
     	    public void run() {
+    	    	
     	    	int carid=cartid;
     	    	int a = Counts.main(carid);
-    	        System.out.println(a);
-
-    	        timeellapse(a);
+    	    	timeellapse(a);
     	    }
     	};
 
+    	//thread to add the cart items to the order table
     	Thread thread2 = new Thread() {
+    		
     	    public void run() {
+    	    	
     	    	 Order order = new Order();
     	         List<Cartitem> items=cartService.getCartItemByCartId(cartid);
-    	    	 for(Cartitem item:items){
+    	    	
+    	         for(Cartitem item:items){
     	      	   
     	    	        Cart cart=cartService.getCartById(cartid);
     	    	        order.setCart(cart);
@@ -58,15 +68,14 @@ public class OrderController {
     	    	        order.setCustomername(customer.getUsername());
     	    	        order.setDeliveryadrress(customer.getAddress());
     	    	        order.setBillingAddress(customer.getAdrs());
-    	    	        
-    	    	        System.out.println(item.getPrid());
-
+    	    	    
     	    	        	Product p = ps.getProductById(item.getPrid());
     	    	        	order.setPid(p.getId());
     	    	        	order.setManufacturer(p.getCompany());
     	    	        	order.setModel(p.getModel());
     	    	        	order.setInstrument(p.getInstrument());
     	    	        	order.setQuant(item.getQuantity());
+    	    	        	order.setTotal(p.getCost());
     	    	        	p.setStock(p.getStock()-item.getQuantity());
     	    	        	ps.editProduct(p);
     	    	        	
@@ -85,6 +94,7 @@ public class OrderController {
         return "redirect:/checkout?cartid="+cartid;
     }
 
+    //clear order and retain stock on time ellapse
 	public void timeellapse(int cartid) {
 		List<Order> orders=OrderService.getOrderByCartId(cartid);
         for(Order order:orders){
