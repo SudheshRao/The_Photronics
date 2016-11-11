@@ -7,8 +7,6 @@
 	<title>Signup</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>"/>
-	<link href="<c:url value="/resources/theme/css/signupcenter.css"/>" rel="stylesheet"/>
-	<link href="<c:url value="/resources/theme/css/navbarstyle.css"/>" rel="stylesheet"/>
 
 </head>
 <body>
@@ -86,7 +84,7 @@
                         <input type="hidden" name="_flowExecutionKey" />
 
                         <br><br>
-                        <button class="btn btn-default" name="_eventId_backToCollectShippingDetail">Back</button>
+                        <button class="btn btn-default" name="_eventId_backToCollectCustomerInfo">Back</button>
                         <input type="submit" value="Submit Order" class="btn btn-default"
                                name="_eventId_orderConfirmed"/>
                         <button class="btn btn-default" name="_eventId_cancel">Cancel Order</button>

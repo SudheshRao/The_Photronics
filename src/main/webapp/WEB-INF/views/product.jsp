@@ -81,6 +81,7 @@
 		</div>
 	</div>
 	
+	<jsp:include page="/WEB-INF/views/template/footer.jsp"/>
 	
 	
 <script src="<c:url value="/resources/bootstrap/js/jquery-3.1.0.min.js"/>"></script> 

@@ -7,19 +7,22 @@
 	<link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>"/>
 </head>
 <body>
+
 <div class="container-wrapper">
     <div class="container">
         <section>
             <div class="jumbotron">
                 <div class="container">
-                    <h1>Invalid Cart</h1>
+                    <h1 class="alert alert-danger">Checkout cancelled</h1>
+
+                    <p>Your checkout process is cancelleddue to time ellapse</p>
                 </div>
             </div>
         </section>
 
         <section class="container">
             <p>
-                <a href="<spring:url value="/product/productList" />" class="btn btn-default">products</a>
+                <a href="allProducts" class="btn btn-default">Products</a>
             </p>
         </section>
 

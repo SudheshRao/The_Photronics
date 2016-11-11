@@ -105,7 +105,6 @@
 				<a id="dropbtn" class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<b class="caret"></b></a>
 					<ul id ="dropdown-content" class="dropdown-menu">
 						<li><a id="dropbtn" tabindex="-1" href="">${pageContext.request.userPrincipal.name}</a></li>
-						<li><a id="dropbtn" href="">Settings</a></li>
 						<li><a id="dropbtn" href="<c:url value="/j_spring_security_logout" />">Logout</a></li>							
 					</ul>
 			</li>

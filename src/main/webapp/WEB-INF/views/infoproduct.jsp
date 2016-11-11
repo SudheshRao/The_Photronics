@@ -68,15 +68,12 @@
                 		<span class="fa fa-shopping-cart"></span> Add to Cart
                 	</a>
                 	
-                	<a href="<spring:url value='/cart'/>" class="btn btn-default">
-                		<span class="glyphicon glyphicon-hand-right"></span>View Cart
-                	</a>
-                	
                 </p>
             </div>
 		</div>
 	
 	</div>
+  <jsp:include page="/WEB-INF/views/template/footer.jsp"/>
     
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="<c:url value="/resources/theme/js/ajsc.js" /> "></script>

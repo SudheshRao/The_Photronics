@@ -44,6 +44,7 @@ public class CustomerSignupServiceimpl implements CustomerSignupService {
 	    public CustomerSignup getCustomerByUsername (String username) {
 	        return customerDAO.getCustomerByUsername(username);
 	    }
+
 	   
 	}
 

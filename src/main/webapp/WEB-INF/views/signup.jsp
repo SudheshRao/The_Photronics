@@ -73,7 +73,7 @@
 				<div class="col-sm-8 "><form:textarea path="address" id="address" class="form-control" placeholder="where do you live?" /></div>
 				<form:errors path="address" cssClass="error"/>
 				</div>
-				
+				<p>${msg1}</p>
 				<button style="margin-top:10px;" type="submit" value="Signup">Signup</button>
 				
 			</form:form>

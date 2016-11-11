@@ -20,6 +20,8 @@ public interface OrderDAO {
     public void removeAllOrder(Cart cart);
     
     public void removeOrderItem (Order order);
+    
+    public boolean checkorder(Cart cart);
 
 
 }

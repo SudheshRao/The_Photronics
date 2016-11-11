@@ -138,7 +138,7 @@ public class ProductController {
 		 	}
 		 
 		productService.editProduct(product);
-		return "redirect:/viewproduct";
+		return "redirect:/allProducts";
 	 }}
 
 	 //delete a product

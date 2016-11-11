@@ -41,14 +41,19 @@ public class SignupController {
 	 
 	 //sign-up execution code
 	 @RequestMapping(value="/signup" , method=RequestMethod.POST)
-	  public String signupsuccess(@Valid @ModelAttribute ("signupForm") CustomerSignup customersignup, BindingResult result){
+	  public String signupsuccess(@Valid @ModelAttribute ("signupForm") CustomerSignup customersignup,Model model, BindingResult result){
 	    	
-		 if (result.hasErrors()){
-	    		return "signup";}
-	    	else { 
+		 if(customersignup.getPassword().equals(customersignup.getConfirmpassword())){
+	    		CustomerSignup user=customerService.getCustomerByUsername(customersignup.getUsername());
+	    		if(user==null){
 	    		this.customerService.addCustomer(customersignup);
-	    		   return "redirect:/";	
+	    		   return "redirect:/";}
+	    		else{
+	    	    	model.addAttribute("msg1", "user already exists");
+	    			return"signup";}
 	    	}
-	     
+		 else{
+	    	model.addAttribute("msg1", "passwords dont match");
+	     return "signup";}
 	    }
 }

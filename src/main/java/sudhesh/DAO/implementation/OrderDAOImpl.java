@@ -80,6 +80,17 @@ public class OrderDAOImpl implements OrderDAO {
         session.save(order);
         session.flush();
 	}
+    public boolean checkorder(Cart cart){
+    	Session session = sessionFactory.getCurrentSession();
+		int cartid=cart.getCartid();
+		
+		Query query = session.createQuery("from Order where cartid = ?");
+        query.setInteger(0, cartid);
+		List<Order> orde = query.list();
+		if(orde.size()>0)
+			return true;
+		else return false;
+    }
 
 
 }

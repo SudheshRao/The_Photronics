@@ -32,7 +32,7 @@
 	
   <div class="container col-sm-4 col-lg-3" >
   <div class="cd panel panel-default">
-	<img class="img-responsive center-block" src="<c:url value="/resources/images/{{item.product.id}}.jpg"/>" style="width:250px;height:250px;" alt="1"/>
+	<img class="img-responsive center-block" src="<c:url value="/resources/images/{{item.product.id}}.jpg"/>" style="width:auto;height:250px;" alt="1"/>
 	<div>
 		<h4 style="text-align:center;">{{item.product.company}} {{item.product.model}}</h4>
 		<h4 style="text-align:center;"><small>{{item.product.instrument}}</small></h4>
@@ -70,6 +70,7 @@
 
   					</div>
 				</div>
+<jsp:include page="/WEB-INF/views/template/footer.jsp"/>
     
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 <script src="<c:url value="/resources/theme/js/ajsc.js" /> "></script>

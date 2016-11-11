@@ -45,8 +45,9 @@ public class OrderController {
     	    public void run() {
     	    	
     	    	int carid=cartid;
-    	    	int a = Counts.main(carid);
+    	    	int a=Counts.main(carid);
     	    	timeellapse(a);
+    	    	
     	    }
     	};
 
@@ -102,8 +103,9 @@ public class OrderController {
         	p.setStock(p.getStock()+order.getQuant());
         	ps.editProduct(p);
         	OrderService.deleteOrder(order);
+        	
 		
-	}}
+        }        }
 
 	
 

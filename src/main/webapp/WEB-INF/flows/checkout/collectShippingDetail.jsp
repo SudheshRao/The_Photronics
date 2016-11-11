@@ -7,8 +7,6 @@
 	<title>Signup</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>"/>
-	<link href="<c:url value="/resources/theme/css/signupcenter.css"/>" rel="stylesheet"/>
-	<link href="<c:url value="/resources/theme/css/navbarstyle.css"/>" rel="stylesheet"/>
 
 </head>
 <body>

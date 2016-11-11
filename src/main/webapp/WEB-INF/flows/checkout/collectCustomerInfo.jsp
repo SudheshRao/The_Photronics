@@ -7,9 +7,6 @@
 	<title>Signup</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>"/>
-	<link href="<c:url value="/resources/theme/css/signupcenter.css"/>" rel="stylesheet"/>
-	<link href="<c:url value="/resources/theme/css/navbarstyle.css"/>" rel="stylesheet"/>
-
 </head>
 <body>
 
@@ -19,13 +16,13 @@
 		</div >
 	</div>
 	
-	<div class="container col-sm-4 col-lg-4" >
+	<div class="container col-sm-4 col-lg-4" style="display:inline;" >
 		<form:form commandName="order" class="form-horizaontal">
 		
-			<div class="cd panel panel-default">
-				<h4>${order.cart.customer.username}</h4>
-				<h4><small>${order.cart.customer.email} | ${order.cart.customer.phno}</small></h4>
-				<h4><small>${order.cart.customer.address}</small></h4>
+			<div class="cd panel panel-default" style="padding:10px;" >
+				<h4> ${order.cart.customer.username}</h4>
+				<h4><small> ${order.cart.customer.email} | ${order.cart.customer.phno}</small></h4>
+				<h4><small> ${order.cart.customer.address}</small></h4>
 			</div>
 			
 			<input type="submit" value="Edit" class="btn btn-default" name="_eventId_editCustomerInfoCollected" />

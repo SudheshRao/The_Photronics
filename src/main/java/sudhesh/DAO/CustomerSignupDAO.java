@@ -18,4 +18,5 @@ public interface CustomerSignupDAO {
 	 public List<CustomerSignup> getAllCustomers();
 	 
 	 public CustomerSignup getCustomerByUsername(String username);
+
 }

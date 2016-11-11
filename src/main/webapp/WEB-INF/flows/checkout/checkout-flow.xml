@@ -24,9 +24,15 @@
     </view-state>
 
     <view-state id="orderConfirmation">
-        <transition on="orderConfirmed" to="processOrder" />
-        <transition on="backToCollectShippingDetail" to="collectShippingDetail" />
+        <transition on="orderConfirmed" to="checkorder" />
+        <transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
     </view-state>
+
+<action-state id="checkorder">
+    <evaluate expression="orderDAOImpl.checkorder(order.cart)" />
+    <transition on="yes" to="processOrder" />
+    <transition on="no" to="timeellapse" />
+</action-state>
 
     <action-state id="processOrder">   
             <evaluate expression="cartitemDAOImpl.removeAllCartItems(order.cart)" />                                     
@@ -50,6 +56,7 @@
     </view-state>
 
     <end-state id="cancelCheckout" view="checkOutCancelled.jsp" />
+    <end-state id="timeellapse" view="timeellapse.jsp" />
 
     <global-transitions>
         <transition on="cancel" to="cancelCheckout" />

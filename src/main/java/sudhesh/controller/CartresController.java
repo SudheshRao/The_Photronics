@@ -69,14 +69,15 @@ public class CartresController {
 	        	
 	        	for (int i=0; i<cartItems.size(); i++) {
 	        		
-	        		if(product.getId()==cartItems.get(i).getProduct().getId()){
+	        		if(product.getId()==cartItems.get(i).getPrid()){
 	        			
 	        			Cartitem cartItem = cartItems.get(i);
 	        			cartItem.setQuantity(cartItem.getQuantity()+1);
 	        			cartItem.setTotal(product.getCost()*cartItem.getQuantity());
 	        			cartItemService.addCartItem(cartItem);
-	        			}
-	        		}
+	        			return;
+	        			}}
+	        		
 
 	        Cartitem cartItem = new Cartitem();
 	        cartItem.setProduct(product);

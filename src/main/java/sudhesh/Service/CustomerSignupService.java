@@ -18,5 +18,6 @@ public interface CustomerSignupService {
 	 public List<CustomerSignup> getAllCustomers();
 	 
 	 public CustomerSignup getCustomerByUsername (String username);
+
 	 
 }

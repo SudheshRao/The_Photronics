@@ -5,7 +5,8 @@ cartApp.controller("cartCtrl", function ($scope, $http){
 	 $scope.addToCart = function (id) {
      	$http.put('http://localhost:8080/the_photronics/res/cart/add/'+id).success(function () {
      		waitingDialog.show('Custom message', {dialogSize: 'sm', progressType: 'warning'});
-     		
+   	     alert("Product successfully added to the cart!"+cartid);
+
 
      });
  };
@@ -21,9 +22,8 @@ cartApp.controller("cartCtrl", function ($scope, $http){
  };
 
  $scope.clearCart = function (cartid) {
-     alert("Product successfully added to the cart!"+cartid)
 
-     $http.put('http://localhost:8080/the_photronics/res/cart/clear/'+cartid).success(function (data) {         alert("Product successfully added to the cart!")
+     $http.put('http://localhost:8080/the_photronics/res/cart/clear/'+cartid).success(function (data) { 
 
      	$scope.refreshCart();
      });
@@ -38,7 +38,7 @@ cartApp.controller("cartCtrl", function ($scope, $http){
  
  $scope.removeFromCart = function (ciid) {
      $http.put('http://localhost:8080/the_photronics/res/cart/remove/'+ciid).success(function (data) {
-    	 alert("Product successfully removed from the cart!")
+    	 alert("Product successfully removed from the cart!");
 
          $scope.refreshCart();
      });

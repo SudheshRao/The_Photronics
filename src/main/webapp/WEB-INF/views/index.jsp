@@ -123,7 +123,7 @@
 			<div class="nav navbar navbar-right"><font size="6px"><i style="color:black;">Best online</i> <b style="color:red;">Music Store</b></font></div>
 		</div>
 	</div>	
-<div style="height:1000px;"></div>
+<jsp:include page="/WEB-INF/views/template/footer.jsp"/>
 
 
 
